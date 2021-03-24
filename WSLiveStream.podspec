@@ -4,7 +4,8 @@
 #
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
+# pod lib lint --verbose --allow-warnings
+# pod spec lint --verbose --allow-warnings
 
 Pod::Spec.new do |s|
   s.name             = 'WSLiveStream'
@@ -26,7 +27,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wrs' => '252797991@qq.com' }
   s.source           = { :git => 'https://github.com/wenrisheng/WSLiveStream.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://www.jianshu.com/u/95d8b8a740e0'
 
   s.ios.deployment_target = '9.0'
 
