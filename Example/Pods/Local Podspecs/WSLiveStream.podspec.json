@@ -1,0 +1,22 @@
+{
+  "name": "WSLiveStream",
+  "version": "0.1.0",
+  "summary": "A short description of WSLiveStream.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/2863757091@qq.com/WSLiveStream",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "2863757091@qq.com": "252797991@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/2863757091@qq.com/WSLiveStream.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "WSLiveStream/Classes/**/*"
+}

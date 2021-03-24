@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FD81894C5E6F2669E450E04B2666B66 /* Pods-WSLiveStream_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE029934AFC3AB39715005B87745AE3 /* Pods-WSLiveStream_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1535B5AD7562EBAC934B79238054A661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		6A72EC994D610318385C5192EB11A2C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		75ACAC5B6A69D753085E3EC366F42CFD /* Pods-WSLiveStream_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D2872933AF4DBD25D0F6F0E90807 /* Pods-WSLiveStream_Example-dummy.m */; };
+		75F05A938D10D0DD3C6E1EDBFC6FA958 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		9BAD4D312E4BEED7E91A5BFEE71D48BA /* Pods-WSLiveStream_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1278941271E0C18C894851E5C26CF577 /* Pods-WSLiveStream_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3A401B5B7FC176A9346939703C6D390 /* WSLiveStream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC238BC6AFA7E4651987E457B087985E /* WSLiveStream-dummy.m */; };
+		A47011FAE261F78F96C87BB76E2E1A2B /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 464EC3C4BC46AC6B5AB15C0488A8B900 /* ReplaceMe.m */; };
+		BCDA14E98650811FD6729BD2DCCEE38E /* Pods-WSLiveStream_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA96BCAD80439346771E9F3500D498E /* Pods-WSLiveStream_Tests-dummy.m */; };
+		F8E1740168B5C42CD8385FF9DE3E3BF1 /* WSLiveStream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1866D90250CC7A1C149A0CF908B882BB /* WSLiveStream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0543907FFA47487B5A509254A486CB29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0CE758E632846667506C29D2A9195C8;
+			remoteInfo = "Pods-WSLiveStream_Example";
+		};
+		20C627C75BAE161CFEB3621FBF49B72F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50DDB564657ADE5F0FD1CE837103F555;
+			remoteInfo = WSLiveStream;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DB8C43404ECC73AEF2CCF3F683DCADF /* Pods-WSLiveStream_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WSLiveStream_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		1278941271E0C18C894851E5C26CF577 /* Pods-WSLiveStream_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WSLiveStream_Tests-umbrella.h"; sourceTree = "<group>"; };
+		1866D90250CC7A1C149A0CF908B882BB /* WSLiveStream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WSLiveStream-umbrella.h"; sourceTree = "<group>"; };
+		1EF7F36D0A0F693FC29CC47BBE9B2AC2 /* Pods-WSLiveStream_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WSLiveStream_Example.modulemap"; sourceTree = "<group>"; };
+		1F10F5A71E5FBB165A623A0FE2CD8BBA /* WSLiveStream.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WSLiveStream.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2325BEAEB4D7DCE0FED7C72C3A48391C /* WSLiveStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WSLiveStream.release.xcconfig; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3493AE33459B8023206071577BA6BCBC /* Pods-WSLiveStream_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WSLiveStream_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		36DF2429332A9E3417EFEF46B5B4AA92 /* Pods_WSLiveStream_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WSLiveStream_Tests.framework; path = "Pods-WSLiveStream_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		379C24012256E4A9EE5B6335CA9A26CD /* Pods-WSLiveStream_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WSLiveStream_Tests.modulemap"; sourceTree = "<group>"; };
+		3AF459D83DB21958F072F3F57B55F0C4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		409D53190B8A4DBBE63CBA91E44AF730 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		464EC3C4BC46AC6B5AB15C0488A8B900 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = WSLiveStream/Classes/ReplaceMe.m; sourceTree = "<group>"; };
+		4C597B8EC7A30C4B25094455EA5BCB62 /* WSLiveStream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WSLiveStream.framework; path = WSLiveStream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58795110A831AAFDB921DBABEB236783 /* Pods_WSLiveStream_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WSLiveStream_Example.framework; path = "Pods-WSLiveStream_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B94C61BAFA21D6382FDA2180545AEF9 /* Pods-WSLiveStream_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WSLiveStream_Example-Info.plist"; sourceTree = "<group>"; };
+		758A48E179B943CA886DAC27A8A9EF42 /* Pods-WSLiveStream_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSLiveStream_Example.release.xcconfig"; sourceTree = "<group>"; };
+		7DA96BCAD80439346771E9F3500D498E /* Pods-WSLiveStream_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WSLiveStream_Tests-dummy.m"; sourceTree = "<group>"; };
+		84E2D2872933AF4DBD25D0F6F0E90807 /* Pods-WSLiveStream_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WSLiveStream_Example-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AAA49FA1149AB4B1AE3842A5E79869EE /* Pods-WSLiveStream_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WSLiveStream_Example-frameworks.sh"; sourceTree = "<group>"; };
+		ADDE583EBF780EE980806A1EFBEABE05 /* WSLiveStream-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WSLiveStream-Info.plist"; sourceTree = "<group>"; };
+		B3B4ACB9C906891CCAFF15AEDDC8E164 /* WSLiveStream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WSLiveStream.modulemap; sourceTree = "<group>"; };
+		C2CCBDAFAD4BE985568033D1B9ADA3ED /* Pods-WSLiveStream_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSLiveStream_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D0FB0860F1FD9AAE6868F2E3771734F5 /* Pods-WSLiveStream_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSLiveStream_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC238BC6AFA7E4651987E457B087985E /* WSLiveStream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WSLiveStream-dummy.m"; sourceTree = "<group>"; };
+		E64F5C82E8855B2925A988D8F5EFCEBB /* WSLiveStream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WSLiveStream-prefix.pch"; sourceTree = "<group>"; };
+		F0E4A291131C9F6BCDF04603CB8023AF /* WSLiveStream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WSLiveStream.debug.xcconfig; sourceTree = "<group>"; };
+		F478E2CB5A000770ABB2325DB7C13CA4 /* Pods-WSLiveStream_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WSLiveStream_Tests-Info.plist"; sourceTree = "<group>"; };
+		FC36774EE52594883DC81B1D1E03818C /* Pods-WSLiveStream_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WSLiveStream_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FEE029934AFC3AB39715005B87745AE3 /* Pods-WSLiveStream_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WSLiveStream_Example-umbrella.h"; sourceTree = "<group>"; };
+		FEEBD6969BC3EB3903F495F147884671 /* Pods-WSLiveStream_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSLiveStream_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FFABF1FB21CCB15017ECE468165EC588 /* Pods-WSLiveStream_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WSLiveStream_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43A36447EB7F8E70171F09EEE1DB1BF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A72EC994D610318385C5192EB11A2C3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8198C7AF693ADF2126D3A91FFE269886 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75F05A938D10D0DD3C6E1EDBFC6FA958 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F1BF5922D0B2253AD9779C001E4BF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1535B5AD7562EBAC934B79238054A661 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EDAAE4F95F62BDDB398AFF6A0D0D4BB /* Pods-WSLiveStream_Example */ = {
+			isa = PBXGroup;
+			children = (
+				1EF7F36D0A0F693FC29CC47BBE9B2AC2 /* Pods-WSLiveStream_Example.modulemap */,
+				FFABF1FB21CCB15017ECE468165EC588 /* Pods-WSLiveStream_Example-acknowledgements.markdown */,
+				0DB8C43404ECC73AEF2CCF3F683DCADF /* Pods-WSLiveStream_Example-acknowledgements.plist */,
+				84E2D2872933AF4DBD25D0F6F0E90807 /* Pods-WSLiveStream_Example-dummy.m */,
+				AAA49FA1149AB4B1AE3842A5E79869EE /* Pods-WSLiveStream_Example-frameworks.sh */,
+				6B94C61BAFA21D6382FDA2180545AEF9 /* Pods-WSLiveStream_Example-Info.plist */,
+				FEE029934AFC3AB39715005B87745AE3 /* Pods-WSLiveStream_Example-umbrella.h */,
+				C2CCBDAFAD4BE985568033D1B9ADA3ED /* Pods-WSLiveStream_Example.debug.xcconfig */,
+				758A48E179B943CA886DAC27A8A9EF42 /* Pods-WSLiveStream_Example.release.xcconfig */,
+			);
+			name = "Pods-WSLiveStream_Example";
+			path = "Target Support Files/Pods-WSLiveStream_Example";
+			sourceTree = "<group>";
+		};
+		4B9A2AE865D1AD41BCAF5A8F6AAB4F3A /* Pods-WSLiveStream_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				379C24012256E4A9EE5B6335CA9A26CD /* Pods-WSLiveStream_Tests.modulemap */,
+				FC36774EE52594883DC81B1D1E03818C /* Pods-WSLiveStream_Tests-acknowledgements.markdown */,
+				3493AE33459B8023206071577BA6BCBC /* Pods-WSLiveStream_Tests-acknowledgements.plist */,
+				7DA96BCAD80439346771E9F3500D498E /* Pods-WSLiveStream_Tests-dummy.m */,
+				F478E2CB5A000770ABB2325DB7C13CA4 /* Pods-WSLiveStream_Tests-Info.plist */,
+				1278941271E0C18C894851E5C26CF577 /* Pods-WSLiveStream_Tests-umbrella.h */,
+				D0FB0860F1FD9AAE6868F2E3771734F5 /* Pods-WSLiveStream_Tests.debug.xcconfig */,
+				FEEBD6969BC3EB3903F495F147884671 /* Pods-WSLiveStream_Tests.release.xcconfig */,
+			);
+			name = "Pods-WSLiveStream_Tests";
+			path = "Target Support Files/Pods-WSLiveStream_Tests";
+			sourceTree = "<group>";
+		};
+		56AAC4796EA32076299E25591EECF4A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58795110A831AAFDB921DBABEB236783 /* Pods_WSLiveStream_Example.framework */,
+				36DF2429332A9E3417EFEF46B5B4AA92 /* Pods_WSLiveStream_Tests.framework */,
+				4C597B8EC7A30C4B25094455EA5BCB62 /* WSLiveStream.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		719A2DEC123DC64AEBE6BDACAC0C556C /* WSLiveStream */ = {
+			isa = PBXGroup;
+			children = (
+				464EC3C4BC46AC6B5AB15C0488A8B900 /* ReplaceMe.m */,
+				D9B28FA7214398485916C82E71370CCC /* Pod */,
+				B3EC487798BE363E16CD471660251137 /* Support Files */,
+			);
+			name = WSLiveStream;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		850E484DF9E55146C488EFE10095148D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EDAAE4F95F62BDDB398AFF6A0D0D4BB /* Pods-WSLiveStream_Example */,
+				4B9A2AE865D1AD41BCAF5A8F6AAB4F3A /* Pods-WSLiveStream_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B3EC487798BE363E16CD471660251137 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3B4ACB9C906891CCAFF15AEDDC8E164 /* WSLiveStream.modulemap */,
+				DC238BC6AFA7E4651987E457B087985E /* WSLiveStream-dummy.m */,
+				ADDE583EBF780EE980806A1EFBEABE05 /* WSLiveStream-Info.plist */,
+				E64F5C82E8855B2925A988D8F5EFCEBB /* WSLiveStream-prefix.pch */,
+				1866D90250CC7A1C149A0CF908B882BB /* WSLiveStream-umbrella.h */,
+				F0E4A291131C9F6BCDF04603CB8023AF /* WSLiveStream.debug.xcconfig */,
+				2325BEAEB4D7DCE0FED7C72C3A48391C /* WSLiveStream.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/WSLiveStream";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				F872454FA9A6D8971A48894FD0462016 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				56AAC4796EA32076299E25591EECF4A5 /* Products */,
+				850E484DF9E55146C488EFE10095148D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9B28FA7214398485916C82E71370CCC /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3AF459D83DB21958F072F3F57B55F0C4 /* LICENSE */,
+				409D53190B8A4DBBE63CBA91E44AF730 /* README.md */,
+				1F10F5A71E5FBB165A623A0FE2CD8BBA /* WSLiveStream.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F872454FA9A6D8971A48894FD0462016 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				719A2DEC123DC64AEBE6BDACAC0C556C /* WSLiveStream */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		452F300A21B43312AD4AE1AB35CA6235 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BAD4D312E4BEED7E91A5BFEE71D48BA /* Pods-WSLiveStream_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F5A24088F93F3392CDA4A718396AA3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8E1740168B5C42CD8385FF9DE3E3BF1 /* WSLiveStream-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9353F41F3AAC9CB9DD529B8D4BB7DBA6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FD81894C5E6F2669E450E04B2666B66 /* Pods-WSLiveStream_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		50DDB564657ADE5F0FD1CE837103F555 /* WSLiveStream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F611A9C89C3C25BCFCC05EB662D02D /* Build configuration list for PBXNativeTarget "WSLiveStream" */;
+			buildPhases = (
+				45F5A24088F93F3392CDA4A718396AA3 /* Headers */,
+				2ADB38D3D718F855EF200D03AD895ED2 /* Sources */,
+				43A36447EB7F8E70171F09EEE1DB1BF8 /* Frameworks */,
+				7C4AA7C1ED1A710F1B5755A7525129A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WSLiveStream;
+			productName = WSLiveStream;
+			productReference = 4C597B8EC7A30C4B25094455EA5BCB62 /* WSLiveStream.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A0CE758E632846667506C29D2A9195C8 /* Pods-WSLiveStream_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2476B6436439AB998AFFE08A9A3B5C4 /* Build configuration list for PBXNativeTarget "Pods-WSLiveStream_Example" */;
+			buildPhases = (
+				9353F41F3AAC9CB9DD529B8D4BB7DBA6 /* Headers */,
+				C514FC70FC3F7917BA73922C0F1644EE /* Sources */,
+				C6F1BF5922D0B2253AD9779C001E4BF6 /* Frameworks */,
+				0AFF9F515DD50380DB46F1136D1D6C8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC37DBDB4E9E32E3F4ABE2ABCF3EC972 /* PBXTargetDependency */,
+			);
+			name = "Pods-WSLiveStream_Example";
+			productName = "Pods-WSLiveStream_Example";
+			productReference = 58795110A831AAFDB921DBABEB236783 /* Pods_WSLiveStream_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BBF205136B0B01D005BAD441F23EA4B8 /* Pods-WSLiveStream_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3D8DFA91AD03A5879323FA2366F3E7A /* Build configuration list for PBXNativeTarget "Pods-WSLiveStream_Tests" */;
+			buildPhases = (
+				452F300A21B43312AD4AE1AB35CA6235 /* Headers */,
+				C11FC9D534089701ECCFED45310275A8 /* Sources */,
+				8198C7AF693ADF2126D3A91FFE269886 /* Frameworks */,
+				6EA99B3433D0BC18D690C6BEA5452055 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD6340233152D4A6F45BAFE8E71FCA8F /* PBXTargetDependency */,
+			);
+			name = "Pods-WSLiveStream_Tests";
+			productName = "Pods-WSLiveStream_Tests";
+			productReference = 36DF2429332A9E3417EFEF46B5B4AA92 /* Pods_WSLiveStream_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 56AAC4796EA32076299E25591EECF4A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0CE758E632846667506C29D2A9195C8 /* Pods-WSLiveStream_Example */,
+				BBF205136B0B01D005BAD441F23EA4B8 /* Pods-WSLiveStream_Tests */,
+				50DDB564657ADE5F0FD1CE837103F555 /* WSLiveStream */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0AFF9F515DD50380DB46F1136D1D6C8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA99B3433D0BC18D690C6BEA5452055 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C4AA7C1ED1A710F1B5755A7525129A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2ADB38D3D718F855EF200D03AD895ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A47011FAE261F78F96C87BB76E2E1A2B /* ReplaceMe.m in Sources */,
+				A3A401B5B7FC176A9346939703C6D390 /* WSLiveStream-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C11FC9D534089701ECCFED45310275A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCDA14E98650811FD6729BD2DCCEE38E /* Pods-WSLiveStream_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C514FC70FC3F7917BA73922C0F1644EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75ACAC5B6A69D753085E3EC366F42CFD /* Pods-WSLiveStream_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD6340233152D4A6F45BAFE8E71FCA8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-WSLiveStream_Example";
+			target = A0CE758E632846667506C29D2A9195C8 /* Pods-WSLiveStream_Example */;
+			targetProxy = 0543907FFA47487B5A509254A486CB29 /* PBXContainerItemProxy */;
+		};
+		EC37DBDB4E9E32E3F4ABE2ABCF3EC972 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WSLiveStream;
+			target = 50DDB564657ADE5F0FD1CE837103F555 /* WSLiveStream */;
+			targetProxy = 20C627C75BAE161CFEB3621FBF49B72F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		409D814EA840E560FC97BABCD4C80FF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEEBD6969BC3EB3903F495F147884671 /* Pods-WSLiveStream_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WSLiveStream_Tests/Pods-WSLiveStream_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WSLiveStream_Tests/Pods-WSLiveStream_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		573B0CB3DBC252AD1B2AC7D3CF5623F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2CCBDAFAD4BE985568033D1B9ADA3ED /* Pods-WSLiveStream_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WSLiveStream_Example/Pods-WSLiveStream_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WSLiveStream_Example/Pods-WSLiveStream_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9443C34323536344E40651E235E69175 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2325BEAEB4D7DCE0FED7C72C3A48391C /* WSLiveStream.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WSLiveStream/WSLiveStream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WSLiveStream/WSLiveStream-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WSLiveStream/WSLiveStream.modulemap";
+				PRODUCT_MODULE_NAME = WSLiveStream;
+				PRODUCT_NAME = WSLiveStream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BAA9E2B3C42B7A081B984709F3A439F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0E4A291131C9F6BCDF04603CB8023AF /* WSLiveStream.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WSLiveStream/WSLiveStream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WSLiveStream/WSLiveStream-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WSLiveStream/WSLiveStream.modulemap";
+				PRODUCT_MODULE_NAME = WSLiveStream;
+				PRODUCT_NAME = WSLiveStream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CE22C2138C48BD55EE3D5706093B2555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 758A48E179B943CA886DAC27A8A9EF42 /* Pods-WSLiveStream_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WSLiveStream_Example/Pods-WSLiveStream_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WSLiveStream_Example/Pods-WSLiveStream_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D2314557A23F659676CE696E59991DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0FB0860F1FD9AAE6868F2E3771734F5 /* Pods-WSLiveStream_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WSLiveStream_Tests/Pods-WSLiveStream_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WSLiveStream_Tests/Pods-WSLiveStream_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3D8DFA91AD03A5879323FA2366F3E7A /* Build configuration list for PBXNativeTarget "Pods-WSLiveStream_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2314557A23F659676CE696E59991DFB /* Debug */,
+				409D814EA840E560FC97BABCD4C80FF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F611A9C89C3C25BCFCC05EB662D02D /* Build configuration list for PBXNativeTarget "WSLiveStream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAA9E2B3C42B7A081B984709F3A439F1 /* Debug */,
+				9443C34323536344E40651E235E69175 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2476B6436439AB998AFFE08A9A3B5C4 /* Build configuration list for PBXNativeTarget "Pods-WSLiveStream_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				573B0CB3DBC252AD1B2AC7D3CF5623F2 /* Debug */,
+				CE22C2138C48BD55EE3D5706093B2555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
