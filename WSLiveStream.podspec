@@ -22,11 +22,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/wenrisheng/WSLiveStream'
+  s.homepage         = 'https://gitee.com/wrswenrisheng/wslive-stream'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wrs' => '252797991@qq.com' }
-  s.source           = { :git => 'https://github.com/wenrisheng/WSLiveStream.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://gitee.com/wrswenrisheng/wslive-stream.git', :tag => s.version.to_s }
   s.social_media_url = 'https://www.jianshu.com/u/95d8b8a740e0'
 
   s.ios.deployment_target = '9.0'
