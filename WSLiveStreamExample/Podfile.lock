@@ -1,0 +1,16 @@
+PODS:
+  - WSLiveStream (0.0.1)
+
+DEPENDENCIES:
+  - WSLiveStream (from `../`)
+
+EXTERNAL SOURCES:
+  WSLiveStream:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WSLiveStream: d31fe034cd222030c057e1dda7a811ee0a998cb8
+
+PODFILE CHECKSUM: 61c366913fd05a1350ca22e6e3212c713a06819b
+
+COCOAPODS: 1.9.2

@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'WSLiveStreamExample' do
+  pod 'WSLiveStream', :path => '../'
+
+  target 'WSLiveStreamExampleTests' do
+    inherit! :search_paths
+
+    
+  end
+end
