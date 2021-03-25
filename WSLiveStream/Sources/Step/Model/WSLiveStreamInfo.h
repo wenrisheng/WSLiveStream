@@ -13,27 +13,27 @@
 
 
 /// 流状态
-typedef NS_ENUM (NSUInteger, LFLiveState){
+typedef NS_ENUM (NSUInteger, WSLiveState){
     /// 准备
-    LFLiveReady = 0,
+    LiveReady = 0,
     /// 连接中
-    LFLivePending = 1,
+    LivePending = 1,
     /// 已连接
-    LFLiveStart = 2,
+    LiveStart = 2,
     /// 已断开
-    LFLiveStop = 3,
+    LiveStop = 3,
     /// 连接出错
-    LFLiveError = 4,
+    LiveError = 4,
     ///  正在刷新
-    LFLiveRefresh = 5
+    LiveRefresh = 5
 };
 
-typedef NS_ENUM (NSUInteger, LFLiveSocketErrorCode) {
-    LFLiveSocketError_PreView = 201,              ///< 预览失败
-    LFLiveSocketError_GetStreamInfo = 202,        ///< 获取流媒体信息失败
-    LFLiveSocketError_ConnectSocket = 203,        ///< 连接socket失败
-    LFLiveSocketError_Verification = 204,         ///< 验证服务器失败
-    LFLiveSocketError_ReConnectTimeOut = 205      ///< 重新连接服务器超时
+typedef NS_ENUM (NSUInteger, WSLiveSocketErrorCode) {
+    LiveSocketErrorPreView = 201,              ///< 预览失败
+    LiveSocketErrorGetStreamInfo = 202,        ///< 获取流媒体信息失败
+    LiveSocketErrorConnectSocket = 203,        ///< 连接socket失败
+    LiveSocketErrorVerification = 204,         ///< 验证服务器失败
+    LiveSocketErrorReConnectTimeOut = 205      ///< 重新连接服务器超时
 };
 
 @interface WSLiveStreamInfo : NSObject

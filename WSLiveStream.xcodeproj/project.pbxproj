@@ -872,6 +872,7 @@
 		04E36FA9260B44C70002A764 /* amf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amf.c; sourceTree = "<group>"; };
 		04E36FAA260B44C70002A764 /* rtmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtmp.h; sourceTree = "<group>"; };
 		04E36FAB260B44C70002A764 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		04E37186260C23140002A764 /* WSLiveStreamPublish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSLiveStreamPublish.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -943,6 +944,7 @@
 				04E36FAB260B44C70002A764 /* Test.h */,
 				04E36E3B260B44C50002A764 /* Test.m */,
 				04E36E3C260B44C50002A764 /* Vendors */,
+				04E37186260C23140002A764 /* WSLiveStreamPublish.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";

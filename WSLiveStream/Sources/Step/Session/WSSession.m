@@ -43,7 +43,7 @@
 /// 是否开始上传
 @property (nonatomic, assign) BOOL uploading;
 /// 当前状态
-@property (nonatomic, assign, readwrite) LFLiveState state;
+@property (nonatomic, assign, readwrite) WSLiveState state;
 /// 当前直播type
 @property (nonatomic, assign, readwrite) LFLiveCaptureTypeMask captureType;
 /// 时间戳锁
@@ -156,8 +156,8 @@
 }
 
 #pragma mark -- LFStreamTcpSocketDelegate
-- (void)socketStatus:(nullable id<WSStreamSocket>)socket status:(LFLiveState)status {
-    if (status == LFLiveStart) {
+- (void)socketStatus:(nullable id<WSStreamSocket>)socket status:(WSLiveState)status {
+    if (status == LiveStart) {
         if (!self.uploading) {
             self.AVAlignment = NO;
             self.hasCaptureAudio = NO;
@@ -165,7 +165,7 @@
             self.relativeTimestamps = 0;
             self.uploading = YES;
         }
-    } else if(status == LFLiveStop || status == LFLiveError){
+    } else if(status == LiveStop || status == LiveError){
         self.uploading = NO;
     }
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -176,7 +176,7 @@
     });
 }
 
-- (void)socketDidError:(nullable id<WSStreamSocket>)socket errorCode:(LFLiveSocketErrorCode)errorCode {
+- (void)socketDidError:(nullable id<WSStreamSocket>)socket errorCode:(WSLiveSocketErrorCode)errorCode {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (self.delegate && [self.delegate respondsToSelector:@selector(liveSession:errorCode:)]) {
             [self.delegate liveSession:self errorCode:errorCode];

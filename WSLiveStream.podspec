@@ -4,7 +4,7 @@
 #
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-# lib lint --use-libraries --allow-warnings --verbose
+# pod lib lint --use-libraries --allow-warnings --verbose
 # pod spec lint --verbose --allow-warnings
 
 Pod::Spec.new do |s|
@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
+  s.public_header_files = 'WSLiveStream/Sources/**/*.h'   #公开头文件地址
   s.source_files = 'WSLiveStream/Sources/**/*.{h,m,mm,cpp,c}'
   s.frameworks = "VideoToolbox", "AudioToolbox","AVFoundation","Foundation","UIKit"
   s.libraries = "c++"

@@ -38,15 +38,15 @@ typedef NS_ENUM(NSInteger,LFLiveCaptureTypeMask) {
 };
 
 @class WSSession;
-@protocol LFLiveSessionDelegate <NSObject>
+@protocol WSLiveSessionDelegate <NSObject>
 
 @optional
 /** live status changed will callback */
-- (void)liveSession:(nullable WSSession *)session liveStateDidChange:(LFLiveState)state;
+- (void)liveSession:(nullable WSSession *)session liveStateDidChange:(WSLiveState)state;
 /** live debug info callback */
 - (void)liveSession:(nullable WSSession *)session debugInfo:(nullable WSLiveDebug *)debugInfo;
 /** callback socket errorcode */
-- (void)liveSession:(nullable WSSession *)session errorCode:(LFLiveSocketErrorCode)errorCode;
+- (void)liveSession:(nullable WSSession *)session errorCode:(WSLiveSocketErrorCode)errorCode;
 @end
 
 @class WSLiveStreamInfo;
@@ -58,7 +58,7 @@ typedef NS_ENUM(NSInteger,LFLiveCaptureTypeMask) {
 /// @name Attribute
 ///=============================================================================
 /** The delegate of the capture. captureData callback */
-@property (nullable, nonatomic, weak) id<LFLiveSessionDelegate> delegate;
+@property (nullable, nonatomic, weak) id<WSLiveSessionDelegate> delegate;
 
 /** The running control start capture or stop capture*/
 @property (nonatomic, assign) BOOL running;
@@ -97,7 +97,7 @@ typedef NS_ENUM(NSInteger,LFLiveCaptureTypeMask) {
 @property (nullable, nonatomic, strong, readonly) WSLiveStreamInfo *streamInfo;
 
 /** The status of the stream .*/
-@property (nonatomic, assign, readonly) LFLiveState state;
+@property (nonatomic, assign, readonly) WSLiveState state;
 
 /** The captureType control inner or outer audio and video .*/
 @property (nonatomic, assign, readonly) LFLiveCaptureTypeMask captureType;

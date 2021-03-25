@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../WSLiveStream.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:WSLiveStreamExample.xcodeproj">
    </FileRef>
    <FileRef

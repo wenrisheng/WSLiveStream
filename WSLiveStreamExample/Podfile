@@ -1,13 +1,11 @@
-use_frameworks!
-
+# source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
 platform :ios, '9.0'
-
+workspace 'WSLiveStreamExample'
+#inhibit_all_warnings!
 target 'WSLiveStreamExample' do
   pod 'WSLiveStream', :path => '../'
 
   target 'WSLiveStreamExampleTests' do
     inherit! :search_paths
-
-    
   end
 end

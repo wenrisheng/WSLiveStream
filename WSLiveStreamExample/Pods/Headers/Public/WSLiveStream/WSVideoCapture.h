@@ -1,0 +1,1 @@
+../../../../../WSLiveStream/Sources/Step/Capture/WSVideoCapture.h

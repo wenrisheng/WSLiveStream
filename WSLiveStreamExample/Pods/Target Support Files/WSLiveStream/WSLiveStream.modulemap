@@ -1,0 +1,6 @@
+framework module WSLiveStream {
+  umbrella header "WSLiveStream-umbrella.h"
+
+  export *
+  module * { export * }
+}

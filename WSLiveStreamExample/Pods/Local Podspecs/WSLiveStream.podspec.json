@@ -1,7 +1,7 @@
 {
   "name": "WSLiveStream",
   "version": "0.0.1",
-  "summary": "A short description of WSLiveStream.",
+  "summary": "iOS rtmp WSLiveStream.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://gitee.com/wrswenrisheng/wslive-stream",
   "license": {
@@ -19,5 +19,14 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "WSLiveStream/Classes/**/*"
+  "public_header_files": "WSLiveStream/Sources/**/*.h",
+  "source_files": "WSLiveStream/Sources/**/*.{h,m,mm,cpp,c}",
+  "frameworks": [
+    "VideoToolbox",
+    "AudioToolbox",
+    "AVFoundation",
+    "Foundation",
+    "UIKit"
+  ],
+  "libraries": "c++"
 }

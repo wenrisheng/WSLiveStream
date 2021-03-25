@@ -114,7 +114,7 @@ SAVC(mp4a);
     
     _isConnecting = YES;
     if (self.delegate && [self.delegate respondsToSelector:@selector(socketStatus:status:)]) {
-        [self.delegate socketStatus:self status:LFLivePending];
+        [self.delegate socketStatus:self status:LivePending];
     }
     
     if (_rtmp != NULL) {
@@ -133,7 +133,7 @@ SAVC(mp4a);
 
 - (void)_stop {
     if (self.delegate && [self.delegate respondsToSelector:@selector(socketStatus:status:)]) {
-        [self.delegate socketStatus:self status:LFLiveStop];
+        [self.delegate socketStatus:self status:LiveStop];
     }
     if (_rtmp != NULL) {
         PILI_RTMP_Close(_rtmp, &_error);
@@ -225,7 +225,7 @@ SAVC(mp4a);
             
             //修改发送状态
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                //< 这里只为了不循环调用sendFrame方法 调用栈是保证先出栈再进栈
+                // 这里只为了不循环调用sendFrame方法 调用栈是保证先出栈再进栈
                 _self.isSending = NO;
             });
             
@@ -277,7 +277,7 @@ SAVC(mp4a);
     }
 
     if (self.delegate && [self.delegate respondsToSelector:@selector(socketStatus:status:)]) {
-        [self.delegate socketStatus:self status:LFLiveStart];
+        [self.delegate socketStatus:self status:LiveStart];
     }
 
     [self sendMetaData];
@@ -494,10 +494,10 @@ Failed:
            
         } else if (self.retryTimes4netWorkBreaken >= self.reconnectCount) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(socketStatus:status:)]) {
-                [self.delegate socketStatus:self status:LFLiveError];
+                [self.delegate socketStatus:self status:LiveError];
             }
             if (self.delegate && [self.delegate respondsToSelector:@selector(socketDidError:errorCode:)]) {
-                [self.delegate socketDidError:self errorCode:LFLiveSocketError_ReConnectTimeOut];
+                [self.delegate socketDidError:self errorCode:LiveSocketErrorReConnectTimeOut];
             }
         }
     });
@@ -520,7 +520,7 @@ Failed:
     _sendVideoHead = NO;
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(socketStatus:status:)]) {
-        [self.delegate socketStatus:self status:LFLiveRefresh];
+        [self.delegate socketStatus:self status:LiveRefresh];
     }
     
     if (_rtmp != NULL) {

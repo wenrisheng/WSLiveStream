@@ -3,21 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04E369BF260B07510002A764 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E369BE260B07510002A764 /* AppDelegate.m */; };
-		04E369C2260B07510002A764 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E369C1260B07510002A764 /* SceneDelegate.m */; };
-		04E369C5260B07510002A764 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E369C4260B07510002A764 /* ViewController.m */; };
-		04E369C8260B07510002A764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E369C6260B07510002A764 /* Main.storyboard */; };
 		04E369CA260B07510002A764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E369C9260B07510002A764 /* Assets.xcassets */; };
 		04E369CD260B07510002A764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E369CB260B07510002A764 /* LaunchScreen.storyboard */; };
 		04E369D0260B07520002A764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E369CF260B07520002A764 /* main.m */; };
 		04E369DA260B07520002A764 /* WSLiveStreamExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E369D9260B07520002A764 /* WSLiveStreamExampleTests.m */; };
 		04E369E5260B07520002A764 /* WSLiveStreamExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E369E4260B07520002A764 /* WSLiveStreamExampleUITests.m */; };
-		0A2DA651B6CC67CF235D9A8C /* Pods_WSLiveStreamExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2149237C8E9731F11556CD /* Pods_WSLiveStreamExampleTests.framework */; };
-		8545B35AE1D807228126A72D /* Pods_WSLiveStreamExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D61031F12428414AE738D8 /* Pods_WSLiveStreamExample.framework */; };
+		04E37169260C1FB70002A764 /* DemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E3715F260C1FB70002A764 /* DemoVC.m */; };
+		04E3716A260C1FB70002A764 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E37160260C1FB70002A764 /* AppDelegate.m */; };
+		04E3716B260C1FB70002A764 /* DemoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E37161260C1FB70002A764 /* DemoVC.xib */; };
+		04E3716C260C1FB70002A764 /* CaptureClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E37165260C1FB70002A764 /* CaptureClientVC.m */; };
+		04E3716D260C1FB70002A764 /* CaptureClientVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E37167260C1FB70002A764 /* CaptureClientVC.xib */; };
+		73AF28BBDD95AD9C83098548 /* libPods-WSLiveStreamExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6124439B587ED79F2F30F6 /* libPods-WSLiveStreamExampleTests.a */; };
+		87FB63DB9D631B39798031FC /* libPods-WSLiveStreamExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88762D578CA85331A99FA3DE /* libPods-WSLiveStreamExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +41,6 @@
 /* Begin PBXFileReference section */
 		02A2F09679F90BDBAC67708F /* Pods-WSLiveStreamExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSLiveStreamExample.release.xcconfig"; path = "Target Support Files/Pods-WSLiveStreamExample/Pods-WSLiveStreamExample.release.xcconfig"; sourceTree = "<group>"; };
 		04E369BA260B07510002A764 /* WSLiveStreamExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSLiveStreamExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04E369BD260B07510002A764 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		04E369BE260B07510002A764 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04E369C0260B07510002A764 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		04E369C1260B07510002A764 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		04E369C3260B07510002A764 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04E369C4260B07510002A764 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		04E369C7260B07510002A764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04E369C9260B07510002A764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04E369CC260B07510002A764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04E369CE260B07510002A764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,10 +51,18 @@
 		04E369E0260B07520002A764 /* WSLiveStreamExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WSLiveStreamExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E369E4260B07520002A764 /* WSLiveStreamExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSLiveStreamExampleUITests.m; sourceTree = "<group>"; };
 		04E369E6260B07520002A764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E3715F260C1FB70002A764 /* DemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC.m; sourceTree = "<group>"; };
+		04E37160260C1FB70002A764 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04E37161260C1FB70002A764 /* DemoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoVC.xib; sourceTree = "<group>"; };
+		04E37162260C1FB70002A764 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04E37165260C1FB70002A764 /* CaptureClientVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureClientVC.m; sourceTree = "<group>"; };
+		04E37166260C1FB70002A764 /* CaptureClientVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureClientVC.h; sourceTree = "<group>"; };
+		04E37167260C1FB70002A764 /* CaptureClientVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptureClientVC.xib; sourceTree = "<group>"; };
+		04E37168260C1FB70002A764 /* DemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVC.h; sourceTree = "<group>"; };
 		235010FD773F41B1192FE400 /* Pods-WSLiveStreamExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSLiveStreamExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-WSLiveStreamExampleTests/Pods-WSLiveStreamExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6E2149237C8E9731F11556CD /* Pods_WSLiveStreamExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSLiveStreamExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C6124439B587ED79F2F30F6 /* libPods-WSLiveStreamExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSLiveStreamExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88762D578CA85331A99FA3DE /* libPods-WSLiveStreamExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSLiveStreamExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFA09C039C0A2DAA4F58956 /* Pods-WSLiveStreamExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSLiveStreamExampleTests.release.xcconfig"; path = "Target Support Files/Pods-WSLiveStreamExampleTests/Pods-WSLiveStreamExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		B3D61031F12428414AE738D8 /* Pods_WSLiveStreamExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSLiveStreamExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8397F02D2B4EA39AD30F682 /* Pods-WSLiveStreamExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSLiveStreamExample.debug.xcconfig"; path = "Target Support Files/Pods-WSLiveStreamExample/Pods-WSLiveStreamExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8545B35AE1D807228126A72D /* Pods_WSLiveStreamExample.framework in Frameworks */,
+				87FB63DB9D631B39798031FC /* libPods-WSLiveStreamExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2DA651B6CC67CF235D9A8C /* Pods_WSLiveStreamExampleTests.framework in Frameworks */,
+				73AF28BBDD95AD9C83098548 /* libPods-WSLiveStreamExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,13 +118,12 @@
 		04E369BC260B07510002A764 /* WSLiveStreamExample */ = {
 			isa = PBXGroup;
 			children = (
-				04E369BD260B07510002A764 /* AppDelegate.h */,
-				04E369BE260B07510002A764 /* AppDelegate.m */,
-				04E369C0260B07510002A764 /* SceneDelegate.h */,
-				04E369C1260B07510002A764 /* SceneDelegate.m */,
-				04E369C3260B07510002A764 /* ViewController.h */,
-				04E369C4260B07510002A764 /* ViewController.m */,
-				04E369C6260B07510002A764 /* Main.storyboard */,
+				04E37163260C1FB70002A764 /* CaptureClient */,
+				04E37162260C1FB70002A764 /* AppDelegate.h */,
+				04E37160260C1FB70002A764 /* AppDelegate.m */,
+				04E37168260C1FB70002A764 /* DemoVC.h */,
+				04E3715F260C1FB70002A764 /* DemoVC.m */,
+				04E37161260C1FB70002A764 /* DemoVC.xib */,
 				04E369C9260B07510002A764 /* Assets.xcassets */,
 				04E369CB260B07510002A764 /* LaunchScreen.storyboard */,
 				04E369CE260B07510002A764 /* Info.plist */,
@@ -149,11 +150,29 @@
 			path = WSLiveStreamExampleUITests;
 			sourceTree = "<group>";
 		};
+		04E37163260C1FB70002A764 /* CaptureClient */ = {
+			isa = PBXGroup;
+			children = (
+				04E37164260C1FB70002A764 /* VC */,
+			);
+			path = CaptureClient;
+			sourceTree = "<group>";
+		};
+		04E37164260C1FB70002A764 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				04E37166260C1FB70002A764 /* CaptureClientVC.h */,
+				04E37165260C1FB70002A764 /* CaptureClientVC.m */,
+				04E37167260C1FB70002A764 /* CaptureClientVC.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		732F9A6F960FA843B348A60B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B3D61031F12428414AE738D8 /* Pods_WSLiveStreamExample.framework */,
-				6E2149237C8E9731F11556CD /* Pods_WSLiveStreamExampleTests.framework */,
+				88762D578CA85331A99FA3DE /* libPods-WSLiveStreamExample.a */,
+				5C6124439B587ED79F2F30F6 /* libPods-WSLiveStreamExampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,7 +185,6 @@
 				235010FD773F41B1192FE400 /* Pods-WSLiveStreamExampleTests.debug.xcconfig */,
 				9DFA09C039C0A2DAA4F58956 /* Pods-WSLiveStreamExampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -274,9 +292,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E3716D260C1FB70002A764 /* CaptureClientVC.xib in Resources */,
 				04E369CD260B07510002A764 /* LaunchScreen.storyboard in Resources */,
 				04E369CA260B07510002A764 /* Assets.xcassets in Resources */,
-				04E369C8260B07510002A764 /* Main.storyboard in Resources */,
+				04E3716B260C1FB70002A764 /* DemoVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,10 +367,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E369C5260B07510002A764 /* ViewController.m in Sources */,
-				04E369BF260B07510002A764 /* AppDelegate.m in Sources */,
+				04E3716C260C1FB70002A764 /* CaptureClientVC.m in Sources */,
 				04E369D0260B07520002A764 /* main.m in Sources */,
-				04E369C2260B07510002A764 /* SceneDelegate.m in Sources */,
+				04E37169260C1FB70002A764 /* DemoVC.m in Sources */,
+				04E3716A260C1FB70002A764 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,14 +406,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04E369C6260B07510002A764 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04E369C7260B07510002A764 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		04E369CB260B07510002A764 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -457,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -510,7 +521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
