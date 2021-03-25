@@ -255,7 +255,14 @@ NSString *const beautyLevel = SHADER_STRING
     [self setFloat:0.6 * (-0.5 + brightLevel) forUniformName:@"brightness"];
 }
 
-- (void)setParams:(CGFloat)beauty tone:(CGFloat)tone {
+- (void)setToneLevel:(CGFloat)toneLevel
+{
+    _toneLevel = toneLevel;
+    [self setParams:_beautyLevel tone:_toneLevel];
+}
+
+- (void)setParams:(CGFloat)beauty tone:(CGFloat)tone
+{
     GPUVector4 fBeautyParam;
     fBeautyParam.one = 1.0 - 0.6 * beauty;
     fBeautyParam.two = 1.0 - 0.3 * beauty;

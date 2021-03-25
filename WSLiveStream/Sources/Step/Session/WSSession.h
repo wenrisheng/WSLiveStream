@@ -78,6 +78,8 @@ typedef NS_ENUM(NSInteger,LFLiveCaptureTypeMask) {
 /** The brightLevel control brightness Level, Default is 0.5, between 0.0 ~ 1.0 */
 @property (nonatomic, assign) CGFloat brightLevel;
 
+@property (nonatomic, assign) CGFloat toneLevel;
+
 /** The torch control camera zoom scale default 1.0, between 1.0 ~ 3.0 */
 @property (nonatomic, assign) CGFloat zoomScale;
 

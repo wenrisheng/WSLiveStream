@@ -41,6 +41,7 @@
 @synthesize torch = _torch;
 @synthesize beautyLevel = _beautyLevel;
 @synthesize brightLevel = _brightLevel;
+@synthesize toneLevel = _toneLevel;
 @synthesize zoomScale = _zoomScale;
 
 #pragma mark -
@@ -69,15 +70,16 @@
         self.beautyFace = YES;
         self.beautyLevel = 0.5;
         self.brightLevel = 0.5;
+        self.toneLevel = 0.5;
         self.zoomScale = 1.0;
         self.mirror = YES;
         self.saveLocalVideo = NO;
         
         self.videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:_configuration.avSessionPreset cameraPosition:AVCaptureDevicePositionFront];
-        self.videoCamera.outputImageOrientation = _configuration.outputImageOrientation;
+        self.videoCamera.outputImageOrientation = _configuration.outputImageOrientation; // 设置视频输出方向，不然看到的视频会反向
         self.videoCamera.horizontallyMirrorFrontFacingCamera = NO;
         self.videoCamera.horizontallyMirrorRearFacingCamera = NO;
-        self.videoCamera.frameRate = (int32_t)_configuration.videoFrameRate;
+        self.videoCamera.frameRate = (int32_t)_configuration.videoFrameRate; // 设置帧率
     }
     return self;
 }
@@ -223,6 +225,19 @@
 
 - (CGFloat)brightLevel {
     return _brightLevel;
+}
+
+- (void)setToneLevel:(CGFloat)toneLevel
+{
+    _toneLevel = toneLevel;
+    if (self.beautyFilter) {
+        [self.beautyFilter setToneLevel:toneLevel];
+    }
+}
+
+- (CGFloat)toneLevel
+{
+    return _toneLevel;
 }
 
 - (void)setZoomScale:(CGFloat)zoomScale {

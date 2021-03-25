@@ -965,8 +965,8 @@
 		04E36DFE260B44C50002A764 /* Step */ = {
 			isa = PBXGroup;
 			children = (
-				04E36DFF260B44C50002A764 /* Session */,
 				04E36E02260B44C50002A764 /* Capture */,
+				04E36DFF260B44C50002A764 /* Session */,
 				04E36E08260B44C50002A764 /* Config */,
 				04E36E0D260B44C50002A764 /* Encoder */,
 				04E36E1F260B44C50002A764 /* Publish */,
@@ -1001,9 +1001,9 @@
 		04E36E08260B44C50002A764 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				04E36E0B260B44C50002A764 /* WSLiveAudioConfiguration.h */,
 				04E36E09260B44C50002A764 /* WSLiveAudioConfiguration.m */,
 				04E36E0A260B44C50002A764 /* WSLiveVideoConfiguration.h */,
-				04E36E0B260B44C50002A764 /* WSLiveAudioConfiguration.h */,
 				04E36E0C260B44C50002A764 /* WSLiveVideoConfiguration.m */,
 			);
 			path = Config;
@@ -1082,12 +1082,12 @@
 		04E36E34260B44C50002A764 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				04E36E35260B44C50002A764 /* GPUImageBeautifyFilter.m */,
-				04E36E36260B44C50002A764 /* GPUImageEmptyFilter.m */,
-				04E36E37260B44C50002A764 /* GPUImageBeautyFilter.h */,
-				04E36E38260B44C50002A764 /* GPUImageEmptyFilter.h */,
 				04E36E39260B44C50002A764 /* GPUImageBeautifyFilter.h */,
+				04E36E35260B44C50002A764 /* GPUImageBeautifyFilter.m */,
+				04E36E37260B44C50002A764 /* GPUImageBeautyFilter.h */,
 				04E36E3A260B44C50002A764 /* GPUImageBeautyFilter.m */,
+				04E36E38260B44C50002A764 /* GPUImageEmptyFilter.h */,
+				04E36E36260B44C50002A764 /* GPUImageEmptyFilter.m */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -2158,6 +2158,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = "GLES_SILENCE_DEPRECATION=1";
 				INFOPLIST_FILE = WSLiveStream/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2181,6 +2182,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = "GLES_SILENCE_DEPRECATION=1";
 				INFOPLIST_FILE = WSLiveStream/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -63,7 +63,7 @@ inline static NSString *formatedSpeed(float bytes, float elapsed_milli) {
         videoConfiguration.videoMaxKeyframeInterval = 48;
         videoConfiguration.outputImageOrientation = UIInterfaceOrientationPortrait;
         videoConfiguration.autorotate = NO;
-        videoConfiguration.sessionPreset = LFCaptureSessionPreset720x1280;
+        videoConfiguration.sessionPreset = CaptureSessionPreset720x1280;
         self.session = [[WSSession alloc] initWithAudioConfiguration:[WSLiveAudioConfiguration defaultConfiguration] videoConfiguration:videoConfiguration captureType:LFLiveCaptureDefaultMask];
 
         self.session.delegate = self;
@@ -159,18 +159,18 @@ inline static NSString *formatedSpeed(float bytes, float elapsed_milli) {
     NSLog(@"liveStateDidChange: %@", str);
 }
 
-/** live debug info callback */
+
 - (void)liveSession:(nullable WSSession *)session debugInfo:(nullable WSLiveDebug *)debugInfo {
     NSLog(@"debugInfo uploadSpeed: %@", formatedSpeed(debugInfo.currentBandwidth, debugInfo.elapsedMilli));
 }
 
-/** callback socket errorcode */
+
 - (void)liveSession:(nullable WSSession *)session errorCode:(WSLiveSocketErrorCode)errorCode {
     NSLog(@"errorCode: %ld", errorCode);
 }
 
 - (IBAction)toneSliderValueChanged:(UISlider *)sender {
-//    self.session.toneLevel = sender.value;
+    self.session.toneLevel = sender.value;
 }
 
 - (IBAction)beautySliderValueChanged:(UISlider *)sender {

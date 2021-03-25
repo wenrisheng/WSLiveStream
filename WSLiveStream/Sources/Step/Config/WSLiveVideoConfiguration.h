@@ -3,37 +3,37 @@
 #import <UIKit/UIKit.h>
 
 /// 视频分辨率(都是16：9 当此设备不支持当前分辨率，自动降低一级)
-typedef NS_ENUM (NSUInteger, LFLiveVideoSessionPreset){
+typedef NS_ENUM (NSUInteger, WSLiveVideoSessionPreset){
     /// 低分辨率
-    LFCaptureSessionPreset360x640 = 0,
+    CaptureSessionPreset360x640 = 0,
     /// 中分辨率
-    LFCaptureSessionPreset540x960 = 1,
+    CaptureSessionPreset540x960 = 1,
     /// 高分辨率
-    LFCaptureSessionPreset720x1280 = 2
+    CaptureSessionPreset720x1280 = 2
 };
 
 /// 视频质量
-typedef NS_ENUM (NSUInteger, LFLiveVideoQuality){
+typedef NS_ENUM (NSUInteger, LiveVideoQuality){
     /// 分辨率： 360 *640 帧数：15 码率：500Kps
-    LFLiveVideoQuality_Low1 = 0,
+    LiveVideoQuality_Low1 = 0,
     /// 分辨率： 360 *640 帧数：24 码率：800Kps
-    LFLiveVideoQuality_Low2 = 1,
+    LiveVideoQuality_Low2 = 1,
     /// 分辨率： 360 *640 帧数：30 码率：800Kps
-    LFLiveVideoQuality_Low3 = 2,
+    LiveVideoQuality_Low3 = 2,
     /// 分辨率： 540 *960 帧数：15 码率：800Kps
-    LFLiveVideoQuality_Medium1 = 3,
+    LiveVideoQuality_Medium1 = 3,
     /// 分辨率： 540 *960 帧数：24 码率：800Kps
-    LFLiveVideoQuality_Medium2 = 4,
+    LiveVideoQuality_Medium2 = 4,
     /// 分辨率： 540 *960 帧数：30 码率：800Kps
-    LFLiveVideoQuality_Medium3 = 5,
+    LiveVideoQuality_Medium3 = 5,
     /// 分辨率： 720 *1280 帧数：15 码率：1000Kps
-    LFLiveVideoQuality_High1 = 6,
+    LiveVideoQuality_High1 = 6,
     /// 分辨率： 720 *1280 帧数：24 码率：1200Kps
-    LFLiveVideoQuality_High2 = 7,
+    LiveVideoQuality_High2 = 7,
     /// 分辨率： 720 *1280 帧数：30 码率：1200Kps
-    LFLiveVideoQuality_High3 = 8,
+    LiveVideoQuality_High3 = 8,
     /// 默认配置
-    LFLiveVideoQuality_Default = LFLiveVideoQuality_Low2
+    LiveVideoQuality_Default = LiveVideoQuality_Low2
 };
 
 @interface WSLiveVideoConfiguration : NSObject<NSCoding, NSCopying>
@@ -41,10 +41,10 @@ typedef NS_ENUM (NSUInteger, LFLiveVideoQuality){
 /// 默认视频配置
 + (instancetype)defaultConfiguration;
 /// 视频配置(质量)
-+ (instancetype)defaultConfigurationForQuality:(LFLiveVideoQuality)videoQuality;
++ (instancetype)defaultConfigurationForQuality:(LiveVideoQuality)videoQuality;
 
 /// 视频配置(质量 & 是否是横屏)
-+ (instancetype)defaultConfigurationForQuality:(LFLiveVideoQuality)videoQuality outputImageOrientation:(UIInterfaceOrientation)outputImageOrientation;
++ (instancetype)defaultConfigurationForQuality:(LiveVideoQuality)videoQuality outputImageOrientation:(UIInterfaceOrientation)outputImageOrientation;
 
 #pragma mark - Attribute
 ///=============================================================================
@@ -84,7 +84,7 @@ typedef NS_ENUM (NSUInteger, LFLiveVideoQuality){
 @property (nonatomic, assign) NSUInteger videoMinBitRate;
 
 ///< 分辨率
-@property (nonatomic, assign) LFLiveVideoSessionPreset sessionPreset;
+@property (nonatomic, assign) WSLiveVideoSessionPreset sessionPreset;
 
 ///< ≈sde3分辨率
 @property (nonatomic, assign, readonly) NSString *avSessionPreset;

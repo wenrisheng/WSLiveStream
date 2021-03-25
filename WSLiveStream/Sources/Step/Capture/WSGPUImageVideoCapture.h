@@ -33,6 +33,9 @@
 /// 设置亮度等级，默认0.5，范围0.0～1.0
 @property (nonatomic, assign) CGFloat brightLevel;
 
+/// 设置颜色饱和度，默认0.5，范围0.0～1.0
+@property (nonatomic, assign) CGFloat toneLevel;
+
 /// 设置摄像机缩放倍数，默认1.0，范围1.0～3.0
 @property (nonatomic, assign) CGFloat zoomScale;
 
@@ -45,23 +48,16 @@
 /// 当前帧图片
 @property (nonatomic, strong, nullable) UIImage *currentImage;
 
-/* The saveLocalVideo is save the local video */
+/// 视频是否保存在本地
 @property (nonatomic, assign) BOOL saveLocalVideo;
 
-/* The saveLocalVideoPath is save the local video  path */
+/// 本地录像保存路径
 @property (nonatomic, strong, nullable) NSURL *saveLocalVideoPath;
 
-#pragma mark - Initializer
-///=============================================================================
-/// @name Initializer
-///=============================================================================
+
 - (nullable instancetype)init UNAVAILABLE_ATTRIBUTE;
 + (nullable instancetype)new UNAVAILABLE_ATTRIBUTE;
 
-/**
-   The designated initializer. Multiple instances with the same configuration will make the
-   capture unstable.
- */
 - (nullable instancetype)initWithVideoConfiguration:(nullable WSLiveVideoConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
 
 @end

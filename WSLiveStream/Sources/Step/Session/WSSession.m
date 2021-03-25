@@ -291,6 +291,18 @@
     return self.videoCaptureSource.brightLevel;
 }
 
+- (void)setToneLevel:(CGFloat)toneLevel
+{
+    [self willChangeValueForKey:@"toneLevel"];
+    [self.videoCaptureSource setToneLevel:toneLevel];
+    [self didChangeValueForKey:@"toneLevel"];
+}
+
+- (CGFloat)toneLevel
+{
+    return self.videoCaptureSource.toneLevel;
+}
+
 - (void)setZoomScale:(CGFloat)zoomScale {
     [self willChangeValueForKey:@"zoomScale"];
     [self.videoCaptureSource setZoomScale:zoomScale];

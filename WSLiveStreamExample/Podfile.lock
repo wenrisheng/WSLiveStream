@@ -1,5 +1,5 @@
 PODS:
-  - WSLiveStream (0.0.1)
+  - WSLiveStream (0.0.2)
 
 DEPENDENCIES:
   - WSLiveStream (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  WSLiveStream: ea77b0412e6886e7b1836e354eac01ee55750576
+  WSLiveStream: d57aab215ee66a9749edc75971f7f9072463bcf9
 
 PODFILE CHECKSUM: be2522d450d4363b666a1e24741363eec5a66a12
 

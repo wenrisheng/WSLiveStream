@@ -13,37 +13,37 @@
 
 #pragma mark -- LifyCycle
 + (instancetype)defaultConfiguration {
-    WSLiveAudioConfiguration *audioConfig = [WSLiveAudioConfiguration defaultConfigurationForQuality:LFLiveAudioQuality_Default];
+    WSLiveAudioConfiguration *audioConfig = [WSLiveAudioConfiguration defaultConfigurationForQuality:LiveAudioQualityDefault];
     return audioConfig;
 }
 
-+ (instancetype)defaultConfigurationForQuality:(LFLiveAudioQuality)audioQuality {
++ (instancetype)defaultConfigurationForQuality:(LiveAudioQuality)audioQuality {
     WSLiveAudioConfiguration *audioConfig = [WSLiveAudioConfiguration new];
     audioConfig.numberOfChannels = 2;
     switch (audioQuality) {
-    case LFLiveAudioQuality_Low: {
-        audioConfig.audioBitrate = audioConfig.numberOfChannels == 1 ? LFLiveAudioBitRate_32Kbps : LFLiveAudioBitRate_64Kbps;
-        audioConfig.audioSampleRate = LFLiveAudioSampleRate_16000Hz;
+    case LiveAudioQualityLow: {
+        audioConfig.audioBitrate = audioConfig.numberOfChannels == 1 ? LiveAudioBitRate_32Kbps : LiveAudioBitRate_64Kbps;
+        audioConfig.audioSampleRate = LiveAudioSampleRate_16000Hz;
     }
         break;
-    case LFLiveAudioQuality_Medium: {
-        audioConfig.audioBitrate = LFLiveAudioBitRate_96Kbps;
-        audioConfig.audioSampleRate = LFLiveAudioSampleRate_44100Hz;
+    case LiveAudioQualityMedium: {
+        audioConfig.audioBitrate = LiveAudioBitRate_96Kbps;
+        audioConfig.audioSampleRate = LiveAudioSampleRate_44100Hz;
     }
         break;
-    case LFLiveAudioQuality_High: {
-        audioConfig.audioBitrate = LFLiveAudioBitRate_128Kbps;
-        audioConfig.audioSampleRate = LFLiveAudioSampleRate_44100Hz;
+    case LiveAudioQualityHigh: {
+        audioConfig.audioBitrate = LiveAudioBitRate_128Kbps;
+        audioConfig.audioSampleRate = LiveAudioSampleRate_44100Hz;
     }
         break;
-    case LFLiveAudioQuality_VeryHigh: {
-        audioConfig.audioBitrate = LFLiveAudioBitRate_128Kbps;
-        audioConfig.audioSampleRate = LFLiveAudioSampleRate_48000Hz;
+    case LiveAudioQualityVeryHigh: {
+        audioConfig.audioBitrate = LiveAudioBitRate_128Kbps;
+        audioConfig.audioSampleRate = LiveAudioSampleRate_48000Hz;
     }
         break;
     default:{
-        audioConfig.audioBitrate = LFLiveAudioBitRate_96Kbps;
-        audioConfig.audioSampleRate = LFLiveAudioSampleRate_44100Hz;
+        audioConfig.audioBitrate = LiveAudioBitRate_96Kbps;
+        audioConfig.audioSampleRate = LiveAudioSampleRate_44100Hz;
     }
         break;
     }
@@ -63,7 +63,7 @@
 }
 
 #pragma mark Setter
-- (void)setAudioSampleRate:(LFLiveAudioSampleRate)audioSampleRate {
+- (void)setAudioSampleRate:(WSLiveAudioSampleRate)audioSampleRate {
     _audioSampleRate = audioSampleRate;
     NSInteger sampleRateIndex = [self sampleRateIndex:audioSampleRate];
     self.asc[0] = 0x10 | ((sampleRateIndex>>1) & 0x7);
