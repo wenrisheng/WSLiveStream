@@ -6,6 +6,7 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 # pod lib lint --use-libraries --allow-warnings --verbose
 # pod spec lint --use-libraries --allow-warnings --verbose
+# pod trunk push --use-libraries --allow-warnings --verbose
 
 Pod::Spec.new do |s|
   s.name             = 'WSLiveStream'
