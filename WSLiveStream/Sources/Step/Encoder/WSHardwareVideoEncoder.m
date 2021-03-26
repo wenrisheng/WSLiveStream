@@ -52,22 +52,39 @@
         compressionSession = NULL;
     }
 
+    // allocator  分配器,设置为默认分配
+    // width 宽
+    // height 高
+    // encoderSpecification 编码规范,设置nil由videoToolbox自己选择
+    // imageBufferAttributes 源像素缓冲区属性.设置nil不让videToolbox创建,而自己创建
+    // compressedDataAllocator 压缩数据分配器.设置nil,默认的分配
+    // outputCallback 编码回调
+    // refcon 回调客户定义的参考值，此处把self传过去，因为我们需要在C函数中调用self的方法，而C函数无法直接调self
+    // compressionSessionOut 编码会话
     OSStatus status = VTCompressionSessionCreate(NULL, _configuration.videoSize.width, _configuration.videoSize.height, kCMVideoCodecType_H264, NULL, NULL, NULL, VideoCompressonOutputCallback, (__bridge void *)self, &compressionSession);
     if (status != noErr) {
         return;
     }
 
     _currentVideoBitRate = _configuration.videoBitRate;
+    /// 设置关键帧（GOPsize）间隔，GOP太小的话图像会模糊
     VTSessionSetProperty(compressionSession, kVTCompressionPropertyKey_MaxKeyFrameInterval, (__bridge CFTypeRef)@(_configuration.videoMaxKeyframeInterval));
+    /// 最大帧率间隔
     VTSessionSetProperty(compressionSession, kVTCompressionPropertyKey_MaxKeyFrameIntervalDuration, (__bridge CFTypeRef)@(_configuration.videoMaxKeyframeInterval/_configuration.videoFrameRate));
+    /// 设置期望帧率，不是实际帧率
     VTSessionSetProperty(compressionSession, kVTCompressionPropertyKey_ExpectedFrameRate, (__bridge CFTypeRef)@(_configuration.videoFrameRate));
+    /// 码率，码率大了话就会非常清晰，但同时文件也会比较大。码率小的话，图像有时会模糊，但也勉强能看
     VTSessionSetProperty(compressionSession, kVTCompressionPropertyKey_AverageBitRate, (__bridge CFTypeRef)@(_configuration.videoBitRate));
+    /// 数据率限制
     NSArray *limit = @[@(_configuration.videoBitRate * 1.5/8), @(1)];
     VTSessionSetProperty(compressionSession, kVTCompressionPropertyKey_DataRateLimits, (__bridge CFArrayRef)limit);
+    /// 设置实时编码输出（避免延迟）
     VTSessionSetProperty(compressionSession, kVTCompressionPropertyKey_RealTime, kCFBooleanTrue);
     VTSessionSetProperty(compressionSession, kVTCompressionPropertyKey_ProfileLevel, kVTProfileLevel_H264_Main_AutoLevel);
+    /// 是否产生B帧(因为B帧在解码时并不是必要的,是可以抛弃B帧的)
     VTSessionSetProperty(compressionSession, kVTCompressionPropertyKey_AllowFrameReordering, kCFBooleanTrue);
     VTSessionSetProperty(compressionSession, kVTCompressionPropertyKey_H264EntropyMode, kVTH264EntropyMode_CABAC);
+    
     VTCompressionSessionPrepareToEncodeFrames(compressionSession);
 
 }
@@ -95,7 +112,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark -- LFVideoEncoder
+#pragma mark -- VideoEncoder
 - (void)encodeVideoData:(CVPixelBufferRef)pixelBuffer timeStamp:(uint64_t)timeStamp {
     if(_isBackGround) return;
     frameCount++;
@@ -227,7 +244,6 @@ static void VideoCompressonOutputCallback(void *VTref, void *VTFrameRef, OSStatu
 
 - (void)initForFilePath {
     NSString *path = [self GetFilePathByfileName:@"IOSCamDemo.h264"];
-    NSLog(@"%@", path);
     self->fp = fopen([path cStringUsingEncoding:NSUTF8StringEncoding], "wb");
 }
 

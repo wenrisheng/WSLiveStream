@@ -25,7 +25,6 @@
 
 - (instancetype)initWithAudioStreamConfiguration:(nullable WSLiveAudioConfiguration *)configuration {
     if (self = [super init]) {
-        NSLog(@"USE LFHardwareAudioEncoder");
         _configuration = configuration;
         
         if (!leftBuf) {
@@ -61,7 +60,7 @@
     }
     
     if(leftLength + audioData.length >= self.configuration.bufferLength){
-        ///<  发送
+        /// 发送
         NSInteger totalSize = leftLength + audioData.length;
         NSInteger encodeCount = totalSize/self.configuration.bufferLength;
         char *totalBuf = malloc(totalSize);
@@ -83,7 +82,7 @@
         free(totalBuf);
         
     }else{
-        ///< 积累
+        /// 积累
         memcpy(leftBuf+leftLength, audioData.bytes, audioData.length);
         leftLength = leftLength + audioData.length;
     }
@@ -101,7 +100,7 @@
     buffers.mBuffers[0] = inBuffer;
     
     
-    // 初始化一个输出缓冲列表
+    // 初始化编码后输出缓冲列表
     AudioBufferList outBufferList;
     outBufferList.mNumberBuffers = 1;
     outBufferList.mBuffers[0].mNumberChannels = inBuffer.mNumberChannels;
@@ -142,6 +141,7 @@
         return TRUE;
     }
     
+    // 音频输入格式，跟音频采集的时候一样
     AudioStreamBasicDescription inputFormat = {0};
     inputFormat.mSampleRate = _configuration.audioSampleRate;
     inputFormat.mFormatID = kAudioFormatLinearPCM;
@@ -152,6 +152,7 @@
     inputFormat.mBytesPerFrame = inputFormat.mBitsPerChannel / 8 * inputFormat.mChannelsPerFrame;
     inputFormat.mBytesPerPacket = inputFormat.mBytesPerFrame * inputFormat.mFramesPerPacket;
     
+    // 音频输出格式
     AudioStreamBasicDescription outputFormat; // 这里开始是输出音频格式
     memset(&outputFormat, 0, sizeof(outputFormat));
     outputFormat.mSampleRate = inputFormat.mSampleRate;       // 采样率保持一致
@@ -174,7 +175,7 @@
     };
     
     OSStatus result = AudioConverterNewSpecific(&inputFormat, &outputFormat, 2, requestedCodecs, &m_converter);;
-    UInt32 outputBitrate = _configuration.audioBitrate;
+    UInt32 outputBitrate = (UInt32)_configuration.audioBitrate;
     UInt32 propSize = sizeof(outputBitrate);
     
     
@@ -187,7 +188,7 @@
 
 
 #pragma mark -- AudioCallBack
-OSStatus inputDataProc(AudioConverterRef inConverter, UInt32 *ioNumberDataPackets, AudioBufferList *ioData, AudioStreamPacketDescription * *outDataPacketDescription, void *inUserData) { //<span style="font-family: Arial, Helvetica, sans-serif;">AudioConverterFillComplexBuffer 编码过程中，会要求这个函数来填充输入数据，也就是原始PCM数据</span>
+OSStatus inputDataProc(AudioConverterRef inConverter, UInt32 *ioNumberDataPackets, AudioBufferList *ioData, AudioStreamPacketDescription * *outDataPacketDescription, void *inUserData) { // AudioConverterFillComplexBuffer 编码过程中，会要求这个函数来填充输入数据，也就是原始PCM数据</span>
     AudioBufferList bufferList = *(AudioBufferList *)inUserData;
     ioData->mBuffers[0].mNumberChannels = 1;
     ioData->mBuffers[0].mData = bufferList.mBuffers[0].mData;
