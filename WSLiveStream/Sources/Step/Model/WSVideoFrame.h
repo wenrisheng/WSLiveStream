@@ -12,6 +12,7 @@
 @interface WSVideoFrame : WSFrame
 
 @property (nonatomic, assign) BOOL isKeyFrame;
+@property (nonatomic, strong) NSData *vps;
 @property (nonatomic, strong) NSData *sps;
 @property (nonatomic, strong) NSData *pps;
 

@@ -138,6 +138,8 @@
     } else {
         configuration.videoSize = CGSizeMake(size.width, size.height);
     }
+    configuration.enableH264 = YES;
+    configuration.enableH265 = NO;
     return configuration;
     
 }

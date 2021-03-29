@@ -431,6 +431,8 @@
 		04E37149260B44C80002A764 /* amf.c in Sources */ = {isa = PBXBuildFile; fileRef = 04E36FA9260B44C70002A764 /* amf.c */; };
 		04E3714A260B44C80002A764 /* rtmp.h in Headers */ = {isa = PBXBuildFile; fileRef = 04E36FAA260B44C70002A764 /* rtmp.h */; };
 		04E3714B260B44C80002A764 /* Test.h in Headers */ = {isa = PBXBuildFile; fileRef = 04E36FAB260B44C70002A764 /* Test.h */; };
+		04E3720626117E1A0002A764 /* WSHardwareH265VideoEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 04E3720426117E1A0002A764 /* WSHardwareH265VideoEncoder.h */; };
+		04E3720726117E1A0002A764 /* WSHardwareH265VideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E3720526117E1A0002A764 /* WSHardwareH265VideoEncoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -873,6 +875,8 @@
 		04E36FAA260B44C70002A764 /* rtmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtmp.h; sourceTree = "<group>"; };
 		04E36FAB260B44C70002A764 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		04E37186260C23140002A764 /* WSLiveStreamPublish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSLiveStreamPublish.h; sourceTree = "<group>"; };
+		04E3720426117E1A0002A764 /* WSHardwareH265VideoEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSHardwareH265VideoEncoder.h; sourceTree = "<group>"; };
+		04E3720526117E1A0002A764 /* WSHardwareH265VideoEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSHardwareH265VideoEncoder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1021,6 +1025,8 @@
 				04E36E1D260B44C50002A764 /* WSHardwareVideoEncoder.h */,
 				04E36E0F260B44C50002A764 /* WSHardwareVideoEncoder.m */,
 				04E36E0E260B44C50002A764 /* WSVideoEncoding.h */,
+				04E3720426117E1A0002A764 /* WSHardwareH265VideoEncoder.h */,
+				04E3720526117E1A0002A764 /* WSHardwareH265VideoEncoder.m */,
 			);
 			path = Encoder;
 			sourceTree = "<group>";
@@ -1043,13 +1049,13 @@
 		04E36E1F260B44C50002A764 /* Publish */ = {
 			isa = PBXGroup;
 			children = (
+				04E36E25260B44C50002A764 /* NSMutableArray+LFAdd.h */,
 				04E36E20260B44C50002A764 /* NSMutableArray+LFAdd.m */,
 				04E36E21260B44C50002A764 /* WSStreamingBuffer.h */,
-				04E36E22260B44C50002A764 /* WSStreamRTMPSocket.h */,
-				04E36E23260B44C50002A764 /* WSStreamSocket.h */,
 				04E36E24260B44C50002A764 /* WSStreamingBuffer.m */,
-				04E36E25260B44C50002A764 /* NSMutableArray+LFAdd.h */,
+				04E36E22260B44C50002A764 /* WSStreamRTMPSocket.h */,
 				04E36E26260B44C50002A764 /* WSStreamRtmpSocket.m */,
+				04E36E23260B44C50002A764 /* WSStreamSocket.h */,
 			);
 			path = Publish;
 			sourceTree = "<group>";
@@ -1598,6 +1604,7 @@
 				04E3709D260B44C80002A764 /* GPUImageColorPackingFilter.h in Headers */,
 				04E36FBB260B44C70002A764 /* WSMP4Atom.h in Headers */,
 				04E370F2260B44C80002A764 /* GPUImageSphereRefractionFilter.h in Headers */,
+				04E3720626117E1A0002A764 /* WSHardwareH265VideoEncoder.h in Headers */,
 				04E370D8260B44C80002A764 /* GPUImageVignetteFilter.h in Headers */,
 				04E3714A260B44C80002A764 /* rtmp.h in Headers */,
 				04E37103260B44C80002A764 /* GPUImageAdaptiveThresholdFilter.h in Headers */,
@@ -1905,6 +1912,7 @@
 				04E36FCD260B44C70002A764 /* WSStreamRtmpSocket.m in Sources */,
 				04E37083260B44C80002A764 /* GPUImageFramebufferCache.m in Sources */,
 				04E37126260B44C80002A764 /* GPUImageColourFASTSamplingOperation.m in Sources */,
+				04E3720726117E1A0002A764 /* WSHardwareH265VideoEncoder.m in Sources */,
 				04E37142260B44C80002A764 /* hashswf.c in Sources */,
 				04E36FC4260B44C70002A764 /* WSH264VideoEncoder.mm in Sources */,
 				04E370BD260B44C80002A764 /* GPUImageBuffer.m in Sources */,

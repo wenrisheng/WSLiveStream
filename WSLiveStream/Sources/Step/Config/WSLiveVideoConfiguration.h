@@ -83,13 +83,17 @@ typedef NS_ENUM (NSUInteger, LiveVideoQuality){
 /// 视频的最小码率，单位是 bps
 @property (nonatomic, assign) NSUInteger videoMinBitRate;
 
-///< 分辨率
+/// 分辨率
 @property (nonatomic, assign) WSLiveVideoSessionPreset sessionPreset;
 
 ///< ≈sde3分辨率
 @property (nonatomic, assign, readonly) NSString *avSessionPreset;
 
-///< 是否是横屏
+/// 是否是横屏
 @property (nonatomic, assign, readonly) BOOL landscape;
+/// 是否使用H264，默认YES
+@property (nonatomic, assign) BOOL enableH264;
+/// 是否使用H265，默认NO
+@property (nonatomic, assign) BOOL enableH265;
 
 @end

@@ -26,7 +26,7 @@ static const NSInteger RetryTimesMargin = 3;
 #define SAVC(x)    static const AVal av_ ## x = AVC(#x)
 
 static const AVal av_setDataFrame = AVC("@setDataFrame");
-static const AVal av_SDKVersion = AVC("LFLiveKit 2.4.0");
+static const AVal av_SDKVersion = AVC("WSLiveStream 0.0.0");
 SAVC(onMetaData);
 SAVC(duration);
 SAVC(width);
@@ -364,6 +364,50 @@ Failed:
     body = (unsigned char *)malloc(rtmpLength);
     memset(body, 0, rtmpLength);
 
+    body[iIndex++] = 0x17; // 1:I帧  7:AVC
+    body[iIndex++] = 0x00;// AVPacketType：0x00 -- AVC sequence header （即AVCc 保存AVC的profie和 SPS PPS等信息）
+
+    body[iIndex++] = 0x00;
+    body[iIndex++] = 0x00;
+    body[iIndex++] = 0x00;
+
+    body[iIndex++] = 0x01;
+    body[iIndex++] = sps[1];
+    body[iIndex++] = sps[2];
+    body[iIndex++] = sps[3];
+    body[iIndex++] = 0xff;
+
+    /*sps*/
+    body[iIndex++] = 0xe1;
+    body[iIndex++] = (sps_len >> 8) & 0xff;
+    body[iIndex++] = sps_len & 0xff;
+    memcpy(&body[iIndex], sps, sps_len);
+    iIndex += sps_len;
+
+    /*pps*/
+    body[iIndex++] = 0x01;
+    body[iIndex++] = (pps_len >> 8) & 0xff;
+    body[iIndex++] = (pps_len) & 0xff;
+    memcpy(&body[iIndex], pps, pps_len);
+    iIndex += pps_len;
+
+    [self sendPacket:RTMP_PACKET_TYPE_VIDEO data:body size:iIndex nTimestamp:0];
+    free(body);
+}
+
+- (void)sendH264VideoHeader:(WSVideoFrame *)videoFrame {
+
+    unsigned char *body = NULL;
+    NSInteger iIndex = 0;
+    NSInteger rtmpLength = 1024;
+    const char *sps = videoFrame.sps.bytes;
+    const char *pps = videoFrame.pps.bytes;
+    NSInteger sps_len = videoFrame.sps.length;
+    NSInteger pps_len = videoFrame.pps.length;
+
+    body = (unsigned char *)malloc(rtmpLength);
+    memset(body, 0, rtmpLength);
+
     body[iIndex++] = 0x17;
     body[iIndex++] = 0x00;
 
@@ -395,22 +439,93 @@ Failed:
     free(body);
 }
 
-- (void)sendVideo:(WSVideoFrame *)frame {
+- (void)sendH265VideoHeader:(WSVideoFrame *)videoFrame {
+// https://blog.csdn.net/qq_33795447/article/details/89457581
+    unsigned char *body = NULL;
+    NSInteger i = 0;
+    NSInteger rtmpLength = 1024;
+    const char *sps = videoFrame.sps.bytes;
+    const char *pps = videoFrame.pps.bytes;
+    NSInteger sps_len = videoFrame.sps.length;
+    NSInteger pps_len = videoFrame.pps.length;
 
+    body = (unsigned char *)malloc(rtmpLength);
+    memset(body, 0, rtmpLength);
+
+    body[i++] = 0x1C; // 1:I帧  7:AVC
+    body[i++] = 0x00;// AVC sequence header   1byte
+
+    body[i++] = 0x00; // composition time 3 byte
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+
+    body[i++] = 0x01;
+    
+    body[i++] = sps[6];
+    body[i++] = sps[7];
+    body[i++] = sps[8];
+    body[i++] = sps[9];
+
+    body[i++] = sps[12];
+    body[i++] = sps[13];
+    body[i++] = sps[14];
+
+
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+
+    body[i++] = 0x03;    //视频数据nal长度字节数-1，只取低2位
+
+    /*pps*/
+    body[i++] = 0x01;
+    body[i++] = (pps_len >> 8) & 0xff;
+    body[i++] = (pps_len) & 0xff;
+    memcpy(&body[i], pps, pps_len);
+    i += pps_len;
+
+    [self sendPacket:RTMP_PACKET_TYPE_VIDEO data:body size:i nTimestamp:0];
+    free(body);
+}
+
+- (void)sendVideo:(WSVideoFrame *)frame {
+   // 字节说明：
+    ///  第N字节          说明
+    ///             0
     NSInteger i = 0;
     NSInteger rtmpLength = frame.data.length + 9;
     unsigned char *body = (unsigned char *)malloc(rtmpLength);
     memset(body, 0, rtmpLength);
 
+    // 是否为关键帧
     if (frame.isKeyFrame) {
-        body[i++] = 0x17;        // 1:Iframe  7:AVC
+        body[i++] = 0x17;        // 1:I帧  7:AVC
     } else {
-        body[i++] = 0x27;        // 2:Pframe  7:AVC
+        body[i++] = 0x27;        // 2:P帧  7:AVC
     }
-    body[i++] = 0x01;    // AVC NALU
+    // AVPacketType：
+    // 0x00 -- AVC sequence header （即AVCc 保存AVC的profie和 SPS PPS等信息）
+    // 0x01 -- AVC NALU 普通的NALU
+    // 0X02 -- AVC end of sequence
+    body[i++] = 0x01;
+    
+    body[i++] = 0x00; //
     body[i++] = 0x00;
     body[i++] = 0x00;
-    body[i++] = 0x00;
+    
     body[i++] = (frame.data.length >> 24) & 0xff;
     body[i++] = (frame.data.length >> 16) & 0xff;
     body[i++] = (frame.data.length >>  8) & 0xff;
