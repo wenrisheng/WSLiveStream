@@ -64,6 +64,8 @@ inline static NSString *formatedSpeed(float bytes, float elapsed_milli) {
         videoConfiguration.outputImageOrientation = UIInterfaceOrientationPortrait;
         videoConfiguration.autorotate = NO;
         videoConfiguration.sessionPreset = CaptureSessionPreset720x1280;
+        videoConfiguration.enableH264 = YES;
+        videoConfiguration.enableH265 = NO;
         self.session = [[WSSession alloc] initWithAudioConfiguration:[WSLiveAudioConfiguration defaultConfiguration] videoConfiguration:videoConfiguration captureType:LFLiveCaptureDefaultMask];
 
         self.session.delegate = self;
@@ -75,7 +77,7 @@ inline static NSString *formatedSpeed(float bytes, float elapsed_milli) {
         [self requestAccessForAudio];
 
         WSLiveStreamInfo *stream = [WSLiveStreamInfo new];
-        stream.url = @"rtmp://192.168.0.39/live/livestream";
+        stream.url = @"rtmp://192.168.0.169/live/livestream";
         [self.session startLive:stream];
     }
 }

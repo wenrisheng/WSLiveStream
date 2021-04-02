@@ -352,47 +352,11 @@ Failed:
 }
 
 - (void)sendVideoHeader:(WSVideoFrame *)videoFrame {
-
-    unsigned char *body = NULL;
-    NSInteger iIndex = 0;
-    NSInteger rtmpLength = 1024;
-    const char *sps = videoFrame.sps.bytes;
-    const char *pps = videoFrame.pps.bytes;
-    NSInteger sps_len = videoFrame.sps.length;
-    NSInteger pps_len = videoFrame.pps.length;
-
-    body = (unsigned char *)malloc(rtmpLength);
-    memset(body, 0, rtmpLength);
-
-    body[iIndex++] = 0x17; // 1:I帧  7:AVC
-    body[iIndex++] = 0x00;// AVPacketType：0x00 -- AVC sequence header （即AVCc 保存AVC的profie和 SPS PPS等信息）
-
-    body[iIndex++] = 0x00;
-    body[iIndex++] = 0x00;
-    body[iIndex++] = 0x00;
-
-    body[iIndex++] = 0x01;
-    body[iIndex++] = sps[1];
-    body[iIndex++] = sps[2];
-    body[iIndex++] = sps[3];
-    body[iIndex++] = 0xff;
-
-    /*sps*/
-    body[iIndex++] = 0xe1;
-    body[iIndex++] = (sps_len >> 8) & 0xff;
-    body[iIndex++] = sps_len & 0xff;
-    memcpy(&body[iIndex], sps, sps_len);
-    iIndex += sps_len;
-
-    /*pps*/
-    body[iIndex++] = 0x01;
-    body[iIndex++] = (pps_len >> 8) & 0xff;
-    body[iIndex++] = (pps_len) & 0xff;
-    memcpy(&body[iIndex], pps, pps_len);
-    iIndex += pps_len;
-
-    [self sendPacket:RTMP_PACKET_TYPE_VIDEO data:body size:iIndex nTimestamp:0];
-    free(body);
+    if (videoFrame.vps) {
+        [self sendH265VideoHeader:videoFrame];
+    } else {
+        [self sendH264VideoHeader:videoFrame];
+    }
 }
 
 - (void)sendH264VideoHeader:(WSVideoFrame *)videoFrame {
@@ -441,67 +405,104 @@ Failed:
 
 - (void)sendH265VideoHeader:(WSVideoFrame *)videoFrame {
 // https://blog.csdn.net/qq_33795447/article/details/89457581
-    unsigned char *body = NULL;
-    NSInteger i = 0;
-    NSInteger rtmpLength = 1024;
     const char *sps = videoFrame.sps.bytes;
     const char *pps = videoFrame.pps.bytes;
+    const char *vps = videoFrame.vps.bytes;
     NSInteger sps_len = videoFrame.sps.length;
     NSInteger pps_len = videoFrame.pps.length;
-
+    NSInteger vps_len = videoFrame.vps.length;
+    
+    NSInteger rtmpLength = 1024;
+    unsigned char * body=NULL;
     body = (unsigned char *)malloc(rtmpLength);
     memset(body, 0, rtmpLength);
-
-    body[i++] = 0x1C; // 1:I帧  7:AVC
-    body[i++] = 0x00;// AVC sequence header   1byte
-
-    body[i++] = 0x00; // composition time 3 byte
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-
-    body[i++] = 0x01;
-    
-    body[i++] = sps[6];
-    body[i++] = sps[7];
-    body[i++] = sps[8];
-    body[i++] = sps[9];
-
-    body[i++] = sps[12];
-    body[i++] = sps[13];
-    body[i++] = sps[14];
-
-
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-    body[i++] = 0x00;
-
-    body[i++] = 0x03;    //视频数据nal长度字节数-1，只取低2位
-
-    /*pps*/
-    body[i++] = 0x01;
-    body[i++] = (pps_len >> 8) & 0xff;
-    body[i++] = (pps_len) & 0xff;
-    memcpy(&body[i], pps, pps_len);
-    i += pps_len;
-
+        int i = 0;
+        body[i++] = 0x1C;
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+     
+        //general_profile_idc 8bit
+        body[i++] = sps[1];
+        //general_profile_compatibility_flags 32 bit
+        body[i++] = sps[2];
+        body[i++] = sps[3];
+        body[i++] = sps[4];
+        body[i++] = sps[5];
+     
+        // 48 bit NUll nothing deal in rtmp
+        body[i++] = sps[6];
+        body[i++] = sps[7];
+        body[i++] = sps[8];
+        body[i++] = sps[9];
+        body[i++] = sps[10];
+        body[i++] = sps[11];
+     
+        //general_level_idc
+        body[i++] = sps[12];
+     
+        // 48 bit NUll nothing deal in rtmp
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+     
+        //bit(16) avgFrameRate;
+        body[i++] = 0x00;
+        body[i++] = 0x00;
+     
+        /* bit(2) constantFrameRate; */
+        /* bit(3) numTemporalLayers; */
+        /* bit(1) temporalIdNested; */
+        body[i++] = 0x00;
+     
+        /* unsigned int(8) numOfArrays; 03 */
+        body[i++] = 0x03;
+     
+        printf("HEVCDecoderConfigurationRecord data = %s\n", body);
+        body[i++] = 0x20;  //vps 32
+        body[i++] = (1 >> 8) & 0xff;
+        body[i++] = 1 & 0xff;
+        body[i++] = (vps_len >> 8) & 0xff;
+        body[i++] = (vps_len) & 0xff;
+        memcpy(&body[i], vps, vps_len);
+        i += vps_len;
+     
+        //sps
+        body[i++] = 0x21; //sps 33
+        body[i++] = (1 >> 8) & 0xff;
+        body[i++] = 1 & 0xff;
+        body[i++] = (sps_len >> 8) & 0xff;
+        body[i++] = sps_len & 0xff;
+        memcpy(&body[i], sps, sps_len);
+        i += sps_len;
+     
+        //pps
+        body[i++] = 0x22; //pps 34
+        body[i++] = (1 >> 8) & 0xff;
+        body[i++] = 1 & 0xff;
+        body[i++] = (pps_len >> 8) & 0xff;
+        body[i++] = (pps_len) & 0xff;
+        memcpy(&body[i], pps, pps_len);
+        i += pps_len;
+     
     [self sendPacket:RTMP_PACKET_TYPE_VIDEO data:body size:i nTimestamp:0];
     free(body);
 }
 
 - (void)sendVideo:(WSVideoFrame *)frame {
+    if (frame.vps) {
+        [self sendH265Video:frame];
+    } else {
+        [self sendH264Video:frame];
+    }
+}
+
+- (void)sendH264Video:(WSVideoFrame *)frame {
    // 字节说明：
     ///  第N字节          说明
     ///             0
@@ -536,6 +537,39 @@ Failed:
     free(body);
 }
 
+- (void)sendH265Video:(WSVideoFrame *)frame
+{
+    NSInteger i = 0;
+    NSInteger rtmpLength = frame.data.length + 9;
+    unsigned char *body = (unsigned char *)malloc(rtmpLength);
+    memset(body, 0, rtmpLength);
+
+    // 是否为关键帧
+    if (frame.isKeyFrame) {
+        body[i++] = 0x1C;        // 1:I帧  C:AVC/H264
+    } else {
+        body[i++] = 0x2C;        // 2:P帧  C:AVC/H265
+    }
+    // AVPacketType：
+    // 0x00 -- AVC sequence header （即AVCc 保存AVC的profie和 SPS PPS等信息）
+    // 0x01 -- AVC NALU 普通的NALU
+    // 0X02 -- AVC end of sequence
+    body[i++] = 0x01;
+    
+    body[i++] = 0x00; //
+    body[i++] = 0x00;
+    body[i++] = 0x00;
+    
+    body[i++] = (frame.data.length >> 24) & 0xff;
+    body[i++] = (frame.data.length >> 16) & 0xff;
+    body[i++] = (frame.data.length >>  8) & 0xff;
+    body[i++] = (frame.data.length) & 0xff;
+    memcpy(&body[i], frame.data.bytes, frame.data.length);
+
+    [self sendPacket:RTMP_PACKET_TYPE_VIDEO data:body size:(rtmpLength) nTimestamp:frame.timestamp];
+    free(body);
+}
+
 - (NSInteger)sendPacket:(unsigned int)nPacketType data:(unsigned char *)data size:(NSInteger)size nTimestamp:(uint64_t)nTimestamp {
     NSInteger rtmpLength = size;
     PILI_RTMPPacket rtmp_pack;
@@ -545,7 +579,7 @@ Failed:
     rtmp_pack.m_nBodySize = (uint32_t)size;
     memcpy(rtmp_pack.m_body, data, size);
     rtmp_pack.m_hasAbsTimestamp = 0;
-    rtmp_pack.m_packetType = nPacketType;
+    rtmp_pack.m_packetType = nPacketType; // 包类型
     if (_rtmp) rtmp_pack.m_nInfoField2 = _rtmp->m_stream_id;
     rtmp_pack.m_nChannel = 0x04;
     rtmp_pack.m_headerType = RTMP_PACKET_SIZE_LARGE;
